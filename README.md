@@ -87,3 +87,30 @@ Backing materials for a blog post about the use of PDF
   }
   </script>
 ```
+
+# Example CSS Paging
+```css
+@media print {
+    @page {
+        size: A4;
+        margin: 2cm;
+    }
+
+    /* Force page breaks */
+    .page {
+        page-break-after: always;
+    }
+
+    /* Footer styles */
+    @page {
+        @bottom-center {
+            content: "Page " counter(page) " of " counter(pages);
+            font-size: 10pt;
+        }
+        @bottom-right {
+            content: "Contact: 1-800-BANK-HELP | www.bank.com";
+            font-size: 10pt;
+        }
+    }
+}
+```
